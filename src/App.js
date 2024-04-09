@@ -1,10 +1,8 @@
-import DemoComponent from "./DemoComponent";
-
-
+import EntryPage from "./components/EntryPage";
 function App() {
   return (
-    <div>
-   <DemoComponent />
+    <div className="App">
+      <EntryPage />
     </div>
   );
 }
