@@ -1,8 +1,10 @@
-import EntryPage from "./components/EntryPage";
+import {  SignUp } from "./components/index";
 function App() {
   return (
     <div className="App">
-      <EntryPage />
+      
+      <SignUp />
+      
     </div>
   );
 }

@@ -1,9 +1,12 @@
 import React, { useState } from "react";
+import {useNavigate} from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCamera } from "@fortawesome/free-solid-svg-icons";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import logo from "../images/image.svg"
 
 const ProfileSetup = () => {
+  const navigate = useNavigate();
   const [avatar, setAvatar] = useState(null);
   const [location, setLocation] = useState("");
 
@@ -24,6 +27,10 @@ const ProfileSetup = () => {
     : "w-32 h-32 rounded-full border-2 border-dashed flex items-center justify-center mb-2";
 
   return (
+    <>
+    <nav>
+    <img src={logo} alt="logo" className="m-3 fill-pink-500" onClick={()=> navigate("/")}/>
+    </nav>
     <div className="flex flex-col items-center justify-center sm:h-screen bg-white">
       <div className="w-full px-8 py-12 bg-white sm:w-1/2">
         <div className="mb-6 flex flex-col">
@@ -89,6 +96,7 @@ const ProfileSetup = () => {
               ? "bg-pink-200 cursor-not-allowed"
               : "bg-pink-500 cursor-pointer"
           } sm:w-1/3`}
+          onClick={() => navigate("/whoUAre")}
         >
           Next
         </button>
@@ -99,6 +107,7 @@ const ProfileSetup = () => {
         )}
       </div>
     </div>
+    </>
   );
 };
 

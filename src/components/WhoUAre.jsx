@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {useNavigate} from "react-router-dom";
 import OptionCard from "./OptionCard";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
@@ -8,6 +9,7 @@ import inspiration from "../images/profile3.png";
 import logo from "../images/image.svg";
 
 const WhyDribble = () => {
+  const navigate = useNavigate();
   const [selectedOptions, setSelectedOptions] = useState([]);
 
   const handleOptionClick = (option) => {
@@ -21,10 +23,10 @@ const WhyDribble = () => {
   return (
     <>
       <nav className="flex gap-3 p-4 ">
-        <h3 className="text-xl italic text-red-500 hidden sm:block">
-          <img src={logo} alt="Dribbble" />
+        <h3 className="text-xl italic text-red-500 hidden sm:block" >
+          <img src={logo} alt="Dribbble" onClick={()=> navigate("/")} />
         </h3>
-        <div className="bg-gray-100 p-3 ml-4 hover:bg-gray-200 rounded-md hidden sm:inline">
+        <div className="bg-gray-100 p-3 ml-4 hover:bg-gray-200 rounded-md hidden sm:inline" onClick={()=> navigate("/profile")}>
         <FontAwesomeIcon icon={faChevronLeft} />
         </div>
       </nav>
@@ -74,6 +76,7 @@ const WhyDribble = () => {
               ? "bg-pink-200 cursor-not-allowed"
               : "bg-pink-500 cursor-pointed"
           } p-3 px-9 text-white font-bold rounded-md mt-3`}
+          onClick={()=> navigate("/entryPage")}
         >
           Finish
         </button>
@@ -82,7 +85,7 @@ const WhyDribble = () => {
             selectedOptions.length === 0 ? "hidden" : "block"
           }  text-black font-bold mt-3`}
         >
-          <p className="text-gray-400 text-sm">or Press RETURN</p>
+          <p className="text-gray-400 text-sm" onClick={()=> navigate("/")}>or Press RETURN</p>
         </div>
       </div>
     </>

@@ -3,7 +3,7 @@ import inbox from "../images/inbox.png";
 
 const VerifyContent = () => {
   return (
-    <div className="content">
+    <div className="content pt-4">
       <div className="verify-email flex flex-col items-center justify-center sm:h-screen text-gray-600 m-auto px-2">
         <h1 className="text-3xl font-bold mb-4 text-center text-black">Please verify your email...</h1>
         <div className="email-icon mb-4">
